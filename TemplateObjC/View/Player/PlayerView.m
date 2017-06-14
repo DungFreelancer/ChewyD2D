@@ -35,8 +35,12 @@
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(showStandBy) userInfo:nil repeats:YES];
     
     // Handle single tap.
+    self.txtName.delegate = self;
+    self.txtPhone.delegate = self;
+    self.txtPassSetting.delegate = self;
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickStandby:)];
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
+    [self.viewSetting addGestureRecognizer:singleTapGestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -141,6 +145,33 @@
     self.viewSetting.hidden = YES;
     self.txtPassSetting.text = @"";
     [self.txtPassSetting resignFirstResponder];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self onClickStandby:nil];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    [self onClickStandby:nil];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self onClickStandby:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtName) {
+        [self.txtPhone becomeFirstResponder];
+    } else if (textField == self.txtPhone) {
+        [self.txtPhone resignFirstResponder];
+        [self onClickOK:nil];
+    } else if (textField == self.txtPassSetting) {
+        [self.txtPassSetting resignFirstResponder];
+        [self onClickSetting:nil];
+    }
+    
+    return YES;
 }
 
 @end
