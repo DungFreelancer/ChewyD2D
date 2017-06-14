@@ -9,7 +9,7 @@
 #import "BaseView.h"
 #import <MessageUI/MessageUI.h>
 
-@interface SettingView : BaseView <MFMailComposeViewControllerDelegate>
+@interface SettingView : BaseView <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtAmountReward_1;
 @property (weak, nonatomic) IBOutlet UITextField *txtAmountReward_2;

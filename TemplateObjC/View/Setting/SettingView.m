@@ -25,6 +25,14 @@
     logVM = [[LogViewModel alloc] init];
     
     [self setStatus];
+    
+    self.txtAmountReward_1.delegate = self;
+    self.txtAmountReward_2.delegate = self;
+    self.txtAmountReward_3.delegate = self;
+    self.txtAmountReward_4.delegate = self;
+    self.txtAmountReward_5.delegate = self;
+    self.txtAmountReward_6.delegate = self;
+    self.txtAmountReward_7.delegate = self;
 }
 
 - (void)setStatus {
@@ -132,6 +140,30 @@
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark -
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtAmountReward_1) {
+        [self.txtAmountReward_2 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_2) {
+        [self.txtAmountReward_3 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_3) {
+        [self.txtAmountReward_4 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_4) {
+        [self.txtAmountReward_5 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_5) {
+        [self.txtAmountReward_6 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_6) {
+        [self.txtAmountReward_7 becomeFirstResponder];
+    } else if (textField == self.txtAmountReward_7) {
+        [self.txtAmountReward_7 resignFirstResponder];
+        [self onClickSave:nil];
+    }
+    
+    return YES;
 }
 
 @end
