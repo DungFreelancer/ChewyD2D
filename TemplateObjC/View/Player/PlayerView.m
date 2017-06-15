@@ -47,7 +47,7 @@
     [self onClickStandby:nil];
     
     self.txtName.text = @"";
-    self.txtPhone.text = @"84";
+    self.txtPhone.text = @"";
 }
 
 - (void)showStandBy {
@@ -73,7 +73,7 @@
         self.txtPhone.text.length >= 8) {
         LogModel *log = [[LogModel alloc] init];
         log.name = LOG_USER;
-        log.desc = [NSString stringWithFormat:@"Người chơi: ten:%@ sdt:%@", self.txtName.text, self.txtPhone.text];
+        log.desc = [NSString stringWithFormat:@"Người chơi: ten:%@ sdt:%@", self.txtName.text, [self formatPhoneNumber:self.txtPhone.text]];
         log.date = [NSDate date];
         CLLocationCoordinate2D location = [self getLocation];
         log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
@@ -87,6 +87,14 @@
     } else if (self.txtPhone.text.length < 8) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Số điện thoại phải từ 8 ký tự trở lên" andMessage:nil andButton:@"OK"];
     }
+}
+
+- (NSString *)formatPhoneNumber:(NSString *)phoneNumber {
+    if ([phoneNumber characterAtIndex:0] == '0') {
+        return [NSString stringWithFormat:@"84%@", [phoneNumber substringFromIndex:1]];
+    }
+    
+    return phoneNumber;
 }
 
 - (IBAction)onClickShowSetting:(id)sender {
