@@ -45,6 +45,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self onClickStandby:nil];
+    
+    self.txtName.text = @"";
+    self.txtPhone.text = @"84";
 }
 
 - (void)showStandBy {
@@ -79,9 +82,6 @@
         [logVM saveLogs];
         
         [self performSegueWithIdentifier:@"segue_player_play" sender:nil];
-        
-        self.txtName.text = @"";
-        self.txtPhone.text = @"";
     } else if (self.txtName.text.length == 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Xin nhập tên" andMessage:nil andButton:@"OK"];
     } else if (self.txtPhone.text.length < 8) {
