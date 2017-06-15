@@ -10,11 +10,13 @@
 #import "Constant.h"
 #import "UtilityClass.h"
 #import "LogViewModel.h"
+#import "PlayerViewModel.h"
 #import <CoreLocation/CoreLocation.h>
 
 @implementation SettingView {
     CLLocationManager *locationManager;
     LogViewModel *logVM;
+    PlayerViewModel *playerVM;
 }
 
 - (void)viewDidLoad {
@@ -23,6 +25,7 @@
     [self getLocation];
     
     logVM = [[LogViewModel alloc] init];
+    playerVM = [[PlayerViewModel alloc] init];
     
     [self setStatus];
     
@@ -95,6 +98,7 @@
         [mail setSubject:[NSString stringWithFormat:@"%@ - %@ - %f, %f", EMAIL_SUBJECT, [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"dd/MM/yyyy HH:mm"],location.latitude, location.longitude]];
         
         [mail addAttachmentData:[[self getSystemContent] dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"text" fileName:@"System"];
+        [mail addAttachmentData:[[self getPlayerContent] dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"text" fileName:@"Player"];
         
         [self presentViewController:mail animated:YES completion:NULL];
     } else {
@@ -110,6 +114,19 @@
         NSString *date = [[UtilityClass sharedInstance] DateToString:log.date withFormate:@"dd/MM/yyyy HH:mm"];
         
         [content appendFormat:@"Name:%@ - Description:%@ - Date:%@ - Location:%@\n", log.name, log.desc, date, log.location];
+    }
+    
+    return content;
+}
+
+- (NSString *)getPlayerContent {
+    [playerVM loadPlayers];
+    NSMutableString *content = [[NSMutableString alloc] init];
+    
+    for (PlayerModel *player in playerVM.arrPlayer) {
+        NSString *date = [[UtilityClass sharedInstance] DateToString:player.date withFormate:@"dd/MM/yyyy HH:mm"];
+        
+        [content appendFormat:@"Name:%@ - Phone:%@ - Reward:%@ - Date:%@ - Location:%@\n", player.name, player.phone, player.reward, date, player.location];
     }
     
     return content;

@@ -12,5 +12,8 @@
 
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) NSString *phone;
+@property(strong, nonatomic) NSString *reward;
+@property(strong, nonatomic) NSDate *date;
+@property(strong, nonatomic) NSString *location;
 
 @end

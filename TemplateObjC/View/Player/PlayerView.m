@@ -71,15 +71,26 @@
 - (IBAction)onClickOK:(id)sender {
     if (self.txtName.text.length > 0 &&
         self.txtPhone.text.length >= 8) {
-        LogModel *log = [[LogModel alloc] init];
-        log.name = LOG_USER;
-        log.desc = [NSString stringWithFormat:@"Người chơi: ten:%@ sdt:%@", self.txtName.text, [self formatPhoneNumber:self.txtPhone.text]];
-        log.date = [NSDate date];
         CLLocationCoordinate2D location = [self getLocation];
-        log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
-        [logVM loadLogs];
-        [logVM.arrLog addObject:log];
-        [logVM saveLogs];
+        
+        PlayerViewModel *playerVM = [[PlayerViewModel alloc] init];
+        PlayerModel *player = [[PlayerModel alloc] init];
+        player.name = self.txtName.text;
+        player.phone = [self formatPhoneNumber:self.txtPhone.text];
+        player.date = [NSDate date];
+        player.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
+        [playerVM loadPlayers];
+        [playerVM.arrPlayer addObject:player];
+        [playerVM savePlayers];
+        
+//        LogModel *log = [[LogModel alloc] init];
+//        log.name = LOG_USER;
+//        log.desc = [NSString stringWithFormat:@"Người chơi: ten:%@ sdt:%@", self.txtName.text, [self formatPhoneNumber:self.txtPhone.text]];
+//        log.date = [NSDate date];
+//        log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
+//        [logVM loadLogs];
+//        [logVM.arrLog addObject:log];
+//        [logVM saveLogs];
         
         [self performSegueWithIdentifier:@"segue_player_play" sender:nil];
     } else if (self.txtName.text.length == 0) {

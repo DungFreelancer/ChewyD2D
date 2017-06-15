@@ -12,6 +12,7 @@
 #import "HUDHelper.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LogViewModel.h"
+#import "PlayerViewModel.h"
 
 @implementation RewardView {
     CLLocationManager *locationManager;
@@ -49,6 +50,11 @@
     [logVM loadLogs];
     [logVM.arrLog addObject:log];
     [logVM saveLogs];
+    
+    PlayerViewModel *playerVM = [[PlayerViewModel alloc] init];
+    [playerVM loadPlayers];
+    [playerVM.arrPlayer lastObject].reward = rewardName;
+    [playerVM savePlayers];
     
     [self.imgReward setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Reward_%d", self.reward]]];
     
