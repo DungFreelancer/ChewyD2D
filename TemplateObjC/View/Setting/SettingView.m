@@ -141,6 +141,7 @@
         case MFMailComposeResultSent:
             NSLog(@"You sent the email.");
             [logVM clearLogs];
+            [playerVM clearPlayers];
             break;
         case MFMailComposeResultSaved:
             NSLog(@"You saved a draft of this email");
