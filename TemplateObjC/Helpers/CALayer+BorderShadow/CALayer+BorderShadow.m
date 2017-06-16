@@ -10,11 +10,11 @@
 
 @implementation CALayer (BorderShadow)
 
-- (void)setBorderWithRadius:(CGFloat)radius Color:(CGColorRef)color
+- (void)setBorderWithRadius:(CGFloat)radius Color:(UIColor *)color
 {
     self.cornerRadius = radius;
     self.borderWidth = 1;
-    self.borderColor = color;
+    self.borderColor = color.CGColor;
 }
 
 - (void)setShadowWithRadius:(CGFloat)radius

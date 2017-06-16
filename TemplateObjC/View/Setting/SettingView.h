@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtAmountReward_5;
 @property (weak, nonatomic) IBOutlet UITextField *txtAmountReward_6;
 @property (weak, nonatomic) IBOutlet UITextField *txtAmountReward_7;
+@property (weak, nonatomic) IBOutlet UIButton *btnSave;
+@property (weak, nonatomic) IBOutlet UIButton *btnReport;
 - (IBAction)onClickBack:(id)sender;
 - (IBAction)onClickSave:(id)sender;
 - (IBAction)onClickSync:(id)sender;

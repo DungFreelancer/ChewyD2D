@@ -11,6 +11,7 @@
 #import "UtilityClass.h"
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
+#import "CALayer+BorderShadow.h"
 #import <CoreLocation/CoreLocation.h>
 
 @implementation SettingView {
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     
     [self getLocation];
+    [self.btnSave.layer setBorderWithRadius:10.0f Color:[UIColor redColor]];
+    [self.btnReport.layer setBorderWithRadius:10.0f Color:[UIColor redColor]];
     
     logVM = [[LogViewModel alloc] init];
     playerVM = [[PlayerViewModel alloc] init];

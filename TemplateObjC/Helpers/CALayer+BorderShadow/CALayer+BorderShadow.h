@@ -10,7 +10,7 @@
 
 @interface CALayer (BorderShadow)
 
-- (void)setBorderWithRadius:(CGFloat)radius Color:(CGColorRef)color;
+- (void)setBorderWithRadius:(CGFloat)radius Color:(UIColor *)color;
 
 - (void)setShadowWithRadius:(CGFloat)radius;
 

@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewSetting;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassSetting;
+@property (weak, nonatomic) IBOutlet UIButton *btnSetting;
 - (IBAction)onClickSetting:(id)sender;
 
 @end

@@ -12,6 +12,7 @@
 #import "Constant.h"
 #import <CoreLocation/CoreLocation.h>
 #import "UtilityClass.h"
+#import "CALayer+BorderShadow.h"
 
 @implementation PlayerView {
     NSTimer *runStandby;
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
+    [self.viewSetting.layer setBorderWithRadius:10.0f Color:[UIColor whiteColor]];
+    [self.btnSetting.layer setBorderWithRadius:10.0f Color:[UIColor redColor]];
     [self checkFistTime];
     
     logVM = [[LogViewModel alloc] init];
