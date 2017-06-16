@@ -15,29 +15,18 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - MBProgressHUD (1.0.0)
-  - MTBBarcodeScanner (3.1.0)
   - Reachability (3.2)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
-  - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
   - MBProgressHUD (~> 1.0)
-  - MTBBarcodeScanner (~> 3.0)
   - Reachability (~> 3.2)
-  - SDWebImage (~> 3.8)
-  - SWRevealViewController (~> 2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MTBBarcodeScanner: 6d397077f1a4a886050df8e66584a59a1dc429e7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 16f2d1f1910308a007ae5f9d21f615599cdcec7f
+PODFILE CHECKSUM: efa1f874e21e22dc540cbdd9b9ed7051142f99be
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
