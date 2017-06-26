@@ -804,7 +804,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.ChewyD2D;
 				PRODUCT_NAME = ChewyD2D;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -821,7 +821,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.ChewyD2D;
 				PRODUCT_NAME = ChewyD2D;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
