@@ -34,19 +34,19 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0R-5i-PXB">
-                                <rect key="frame" x="403.5" y="252" width="186" height="64"/>
+                                <rect key="frame" x="403.5" y="252" width="186.5" height="64"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-OI-U4f">
-                                <rect key="frame" x="701" y="252" width="185.5" height="64"/>
+                                <rect key="frame" x="700.5" y="252" width="186" height="64"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Gf-hE-wcW">
-                                <rect key="frame" x="793" y="390.5" width="185.5" height="64"/>
+                                <rect key="frame" x="793" y="390" width="185.5" height="64.5"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -306,9 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwv-ge-og4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwv-ge-og4">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="onClickRun:" destination="wfN-TP-pk0" eventType="touchUpInside" id="I1W-gg-KVi"/>
                                 </connections>
@@ -348,15 +347,22 @@
                                 <rect key="frame" x="496" y="466" width="36" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wheel" translatesAutoresizingMaskIntoConstraints="NO" id="tRg-MP-Wtx">
-                                <rect key="frame" x="422" y="292" width="191" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wheel" translatesAutoresizingMaskIntoConstraints="NO" id="tRg-MP-Wtx">
+                                <rect key="frame" x="424.5" y="290" width="185.5" height="192"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VfR-gx-Ey0" firstAttribute="top" secondItem="TkR-kq-1oM" secondAttribute="top" id="8qT-FY-ruQ"/>
+                            <constraint firstItem="tRg-MP-Wtx" firstAttribute="width" secondItem="VfR-gx-Ey0" secondAttribute="width" multiplier="1/5.5" id="9Bw-F1-YAe"/>
+                            <constraint firstItem="Fwv-ge-og4" firstAttribute="leading" secondItem="TkR-kq-1oM" secondAttribute="leading" id="FWv-tX-NEx"/>
                             <constraint firstItem="VfR-gx-Ey0" firstAttribute="leading" secondItem="TkR-kq-1oM" secondAttribute="leading" id="Fbg-Xz-ES9"/>
+                            <constraint firstItem="tRg-MP-Wtx" firstAttribute="centerY" secondItem="TkR-kq-1oM" secondAttribute="centerY" multiplier="1.005" id="Hrb-xd-x78"/>
+                            <constraint firstItem="tRg-MP-Wtx" firstAttribute="centerX" secondItem="TkR-kq-1oM" secondAttribute="centerX" multiplier="1.01" id="MWl-5G-iVD"/>
+                            <constraint firstItem="tRg-MP-Wtx" firstAttribute="height" secondItem="VfR-gx-Ey0" secondAttribute="height" multiplier="1/4" id="WHr-VE-Syk"/>
+                            <constraint firstAttribute="trailing" secondItem="Fwv-ge-og4" secondAttribute="trailing" id="YfV-be-0bg"/>
+                            <constraint firstItem="PvU-oy-uhC" firstAttribute="top" secondItem="Fwv-ge-og4" secondAttribute="bottom" id="o0B-5o-2v1"/>
+                            <constraint firstItem="Fwv-ge-og4" firstAttribute="top" secondItem="TkR-kq-1oM" secondAttribute="top" id="qln-sH-Zxx"/>
                             <constraint firstItem="PvU-oy-uhC" firstAttribute="top" secondItem="VfR-gx-Ey0" secondAttribute="bottom" id="suV-zL-gKg"/>
                             <constraint firstAttribute="trailing" secondItem="VfR-gx-Ey0" secondAttribute="trailing" id="wzb-4m-xRg"/>
                         </constraints>
