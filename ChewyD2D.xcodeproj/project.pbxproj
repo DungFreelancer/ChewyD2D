@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA604E951C4CB722A581B6F /* Pods_ChewyD2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F2B35329B940088861F42C /* Pods_ChewyD2D.framework */; };
 		9A1409DE1E73ECC700B9354B /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1409DD1E73ECC700B9354B /* SettingView.m */; };
 		9A1483E81E73B764004B33DA /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1483E71E73B764004B33DA /* AccountModel.m */; };
 		9A1483EE1E73BC77004B33DA /* AccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1483ED1E73BC77004B33DA /* AccountViewModel.m */; };
@@ -20,8 +21,6 @@
 		9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F19981D8E905700B2E5AB /* Main.storyboard */; };
 		9A5F199D1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F199B1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld */; };
 		9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F199E1D8E905700B2E5AB /* Assets.xcassets */; };
-		9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */; };
-		9A5F19B81D8E905700B2E5AB /* TemplateObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */; };
 		9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19D61D8EA2CB00B2E5AB /* Constant.m */; };
 		9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DA1D8EA41E00B2E5AB /* UIImageView+Download.m */; };
 		9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */; };
@@ -33,7 +32,6 @@
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AD3A3371DC6426800073E15 /* CALayer+BorderShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3A3361DC6426800073E15 /* CALayer+BorderShadow.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
-		F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1059398D395F921191E2A324 /* Pods-ChewyD2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewyD2D.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D.release.xcconfig"; sourceTree = "<group>"; };
+		668FD8814688ACDF42008A79 /* Pods-ChewyD2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewyD2D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D.debug.xcconfig"; sourceTree = "<group>"; };
+		93F2B35329B940088861F42C /* Pods_ChewyD2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChewyD2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
 		9A1409DC1E73ECBD00B9354B /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		9A1409DD1E73ECC700B9354B /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
@@ -79,12 +80,8 @@
 		9A5F199C1D8E905700B2E5AB /* TemplateObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TemplateObjC.xcdatamodel; sourceTree = "<group>"; };
 		9A5F199E1D8E905700B2E5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A5F19A81D8E905700B2E5AB /* TemplateObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateObjCTests.m; sourceTree = "<group>"; };
-		9A5F19AE1D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A5F19B31D8E905700B2E5AB /* TemplateObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateObjCUITests.m; sourceTree = "<group>"; };
-		9A5F19B91D8E905800B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A5F19A81D8E905700B2E5AB /* ChewyD2DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChewyD2DTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5F19B31D8E905700B2E5AB /* ChewyD2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChewyD2DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5F19CB1D8E914800B2E5AB /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		9A5F19D61D8EA2CB00B2E5AB /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		9A5F19D91D8EA40500B2E5AB /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
@@ -115,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */,
+				0BA604E951C4CB722A581B6F /* Pods_ChewyD2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */,
+				93F2B35329B940088861F42C /* Pods_ChewyD2D.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,9 +221,7 @@
 				48C97E043069A5E7511F1953 /* Frameworks */,
 				AC335B873EECD59726E39A67 /* Pods */,
 				9A5F198D1D8E905700B2E5AB /* Products */,
-				9A5F198E1D8E905700B2E5AB /* TemplateObjC */,
-				9A5F19AB1D8E905700B2E5AB /* TemplateObjCTests */,
-				9A5F19B61D8E905700B2E5AB /* TemplateObjCUITests */,
+				9A5F198E1D8E905700B2E5AB /* ChewyD2D */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,13 +229,13 @@
 			isa = PBXGroup;
 			children = (
 				9A5F198C1D8E905700B2E5AB /* ChewyD2D.app */,
-				9A5F19A81D8E905700B2E5AB /* TemplateObjCTests.xctest */,
-				9A5F19B31D8E905700B2E5AB /* TemplateObjCUITests.xctest */,
+				9A5F19A81D8E905700B2E5AB /* ChewyD2DTests.xctest */,
+				9A5F19B31D8E905700B2E5AB /* ChewyD2DUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A5F198E1D8E905700B2E5AB /* TemplateObjC */ = {
+		9A5F198E1D8E905700B2E5AB /* ChewyD2D */ = {
 			isa = PBXGroup;
 			children = (
 				9A5F19C91D8E90A700B2E5AB /* Resource */,
@@ -252,7 +248,7 @@
 				9A5F19931D8E905700B2E5AB /* AppDelegate.m */,
 				9A5F198F1D8E905700B2E5AB /* Supporting Files */,
 			);
-			path = TemplateObjC;
+			path = ChewyD2D;
 			sourceTree = "<group>";
 		};
 		9A5F198F1D8E905700B2E5AB /* Supporting Files */ = {
@@ -262,24 +258,6 @@
 				9A5F19901D8E905700B2E5AB /* main.m */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9A5F19AB1D8E905700B2E5AB /* TemplateObjCTests */ = {
-			isa = PBXGroup;
-			children = (
-				9A5F19AE1D8E905700B2E5AB /* Info.plist */,
-				9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */,
-			);
-			path = TemplateObjCTests;
-			sourceTree = "<group>";
-		};
-		9A5F19B61D8E905700B2E5AB /* TemplateObjCUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A5F19B91D8E905800B2E5AB /* Info.plist */,
-				9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */,
-			);
-			path = TemplateObjCUITests;
 			sourceTree = "<group>";
 		};
 		9A5F19C51D8E907700B2E5AB /* Helpers */ = {
@@ -440,6 +418,8 @@
 			children = (
 				FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */,
 				95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */,
+				668FD8814688ACDF42008A79 /* Pods-ChewyD2D.debug.xcconfig */,
+				1059398D395F921191E2A324 /* Pods-ChewyD2D.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -447,9 +427,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A5F198B1D8E905700B2E5AB /* TemplateObjC */ = {
+		9A5F198B1D8E905700B2E5AB /* ChewyD2D */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A5F19BC1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjC" */;
+			buildConfigurationList = 9A5F19BC1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2D" */;
 			buildPhases = (
 				BDC540DD95AEC6DDC9D4E1D5 /* [CP] Check Pods Manifest.lock */,
 				9A5F19881D8E905700B2E5AB /* Sources */,
@@ -462,14 +442,14 @@
 			);
 			dependencies = (
 			);
-			name = TemplateObjC;
+			name = ChewyD2D;
 			productName = TemplateObjC;
 			productReference = 9A5F198C1D8E905700B2E5AB /* ChewyD2D.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9A5F19A71D8E905700B2E5AB /* TemplateObjCTests */ = {
+		9A5F19A71D8E905700B2E5AB /* ChewyD2DTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A5F19BF1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjCTests" */;
+			buildConfigurationList = 9A5F19BF1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2DTests" */;
 			buildPhases = (
 				9A5F19A41D8E905700B2E5AB /* Sources */,
 				9A5F19A51D8E905700B2E5AB /* Frameworks */,
@@ -480,14 +460,14 @@
 			dependencies = (
 				9A5F19AA1D8E905700B2E5AB /* PBXTargetDependency */,
 			);
-			name = TemplateObjCTests;
+			name = ChewyD2DTests;
 			productName = TemplateObjCTests;
-			productReference = 9A5F19A81D8E905700B2E5AB /* TemplateObjCTests.xctest */;
+			productReference = 9A5F19A81D8E905700B2E5AB /* ChewyD2DTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9A5F19B21D8E905700B2E5AB /* TemplateObjCUITests */ = {
+		9A5F19B21D8E905700B2E5AB /* ChewyD2DUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A5F19C21D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjCUITests" */;
+			buildConfigurationList = 9A5F19C21D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2DUITests" */;
 			buildPhases = (
 				9A5F19AF1D8E905700B2E5AB /* Sources */,
 				9A5F19B01D8E905700B2E5AB /* Frameworks */,
@@ -498,9 +478,9 @@
 			dependencies = (
 				9A5F19B51D8E905700B2E5AB /* PBXTargetDependency */,
 			);
-			name = TemplateObjCUITests;
+			name = ChewyD2DUITests;
 			productName = TemplateObjCUITests;
-			productReference = 9A5F19B31D8E905700B2E5AB /* TemplateObjCUITests.xctest */;
+			productReference = 9A5F19B31D8E905700B2E5AB /* ChewyD2DUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -531,7 +511,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A5F19871D8E905700B2E5AB /* Build configuration list for PBXProject "TemplateObjC" */;
+			buildConfigurationList = 9A5F19871D8E905700B2E5AB /* Build configuration list for PBXProject "ChewyD2D" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -544,9 +524,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A5F198B1D8E905700B2E5AB /* TemplateObjC */,
-				9A5F19A71D8E905700B2E5AB /* TemplateObjCTests */,
-				9A5F19B21D8E905700B2E5AB /* TemplateObjCUITests */,
+				9A5F198B1D8E905700B2E5AB /* ChewyD2D */,
+				9A5F19A71D8E905700B2E5AB /* ChewyD2DTests */,
+				9A5F19B21D8E905700B2E5AB /* ChewyD2DUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -591,7 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDC540DD95AEC6DDC9D4E1D5 /* [CP] Check Pods Manifest.lock */ = {
@@ -621,7 +601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -659,7 +639,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +646,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5F19B81D8E905700B2E5AB /* TemplateObjCUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,12 +654,12 @@
 /* Begin PBXTargetDependency section */
 		9A5F19AA1D8E905700B2E5AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9A5F198B1D8E905700B2E5AB /* TemplateObjC */;
+			target = 9A5F198B1D8E905700B2E5AB /* ChewyD2D */;
 			targetProxy = 9A5F19A91D8E905700B2E5AB /* PBXContainerItemProxy */;
 		};
 		9A5F19B51D8E905700B2E5AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9A5F198B1D8E905700B2E5AB /* TemplateObjC */;
+			target = 9A5F198B1D8E905700B2E5AB /* ChewyD2D */;
 			targetProxy = 9A5F19B41D8E905700B2E5AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -793,12 +771,12 @@
 		};
 		9A5F19BD1D8E905800B2E5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */;
+			baseConfigurationReference = 668FD8814688ACDF42008A79 /* Pods-ChewyD2D.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
-				INFOPLIST_FILE = "$(SRCROOT)/TemplateObjC/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ChewyD2D/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.ChewyD2D;
@@ -810,12 +788,12 @@
 		};
 		9A5F19BE1D8E905800B2E5AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */;
+			baseConfigurationReference = 1059398D395F921191E2A324 /* Pods-ChewyD2D.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
-				INFOPLIST_FILE = "$(SRCROOT)/TemplateObjC/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ChewyD2D/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.ChewyD2D;
@@ -834,7 +812,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateObjC.app/TemplateObjC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChewyD2D.app/ChewyD2D";
 			};
 			name = Debug;
 		};
@@ -847,7 +825,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateObjC.app/TemplateObjC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChewyD2D.app/ChewyD2D";
 			};
 			name = Release;
 		};
@@ -878,7 +856,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A5F19871D8E905700B2E5AB /* Build configuration list for PBXProject "TemplateObjC" */ = {
+		9A5F19871D8E905700B2E5AB /* Build configuration list for PBXProject "ChewyD2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5F19BA1D8E905800B2E5AB /* Debug */,
@@ -887,7 +865,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A5F19BC1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjC" */ = {
+		9A5F19BC1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5F19BD1D8E905800B2E5AB /* Debug */,
@@ -896,7 +874,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A5F19BF1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjCTests" */ = {
+		9A5F19BF1D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2DTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5F19C01D8E905800B2E5AB /* Debug */,
@@ -905,7 +883,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A5F19C21D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "TemplateObjCUITests" */ = {
+		9A5F19C21D8E905800B2E5AB /* Build configuration list for PBXNativeTarget "ChewyD2DUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A5F19C31D8E905800B2E5AB /* Debug */,
