@@ -126,10 +126,11 @@
     [logVM loadLogs];
     NSMutableString *content = [[NSMutableString alloc] init];
     
+    [content appendFormat:@"Name\tDescription\tDate\tLocation\n"];
     for (LogModel *log in logVM.arrLog) {
         NSString *date = [[UtilityClass sharedInstance] DateToString:log.date withFormate:@"dd/MM/yyyy HH:mm"];
         
-        [content appendFormat:@"Name:%@ - Description:%@ - Date:%@ - Location:%@\n", log.name, log.desc, date, log.location];
+        [content appendFormat:@"%@\t%@\t%@\t%@\n", log.name, log.desc, date, log.location];
     }
     
     return content;
@@ -139,10 +140,11 @@
     [playerVM loadPlayers];
     NSMutableString *content = [[NSMutableString alloc] init];
     
+    [content appendFormat:@"Name\tPhone\tReward\tDate\tLocation\n"];
     for (PlayerModel *player in playerVM.arrPlayer) {
         NSString *date = [[UtilityClass sharedInstance] DateToString:player.date withFormate:@"dd/MM/yyyy HH:mm"];
         
-        [content appendFormat:@"Name:%@ - Phone:%@ - Reward:%@ - Date:%@ - Location:%@\n", player.name, player.phone, player.reward, date, player.location];
+        [content appendFormat:@"%@\t%@\t%@\t%@\t%@\n", player.name, player.phone, player.reward, date, player.location];
     }
     
     return content;
