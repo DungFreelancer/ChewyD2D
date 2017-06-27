@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface UtilityClass : NSObject
 
@@ -40,5 +41,8 @@
 - (NSString *)DateToStringForScanQueue:(NSDate *)date;
 - (int)dateDiffrenceFromDateInString:(NSString *)date1 second:(NSString *)date2;
 - (int)dateDiffrenceFromDate:(NSDate *)startDate second:(NSDate *)endDate;
+
+//Get user location
+- (CLLocationCoordinate2D)getLocation;
 
 @end

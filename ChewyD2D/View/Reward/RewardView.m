@@ -10,12 +10,10 @@
 #import "UtilityClass.h"
 #import "Constant.h"
 #import "HUDHelper.h"
-#import <CoreLocation/CoreLocation.h>
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
 
 @implementation RewardView {
-    CLLocationManager *locationManager;
     LogViewModel *logVM;
 }
 
@@ -24,8 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self getLocation];
     
     logVM = [[LogViewModel alloc] init];
     LogModel *log = [[LogModel alloc] init];
@@ -48,7 +44,7 @@
     }
     log.desc = rewardName;
     log.date = [NSDate date];
-    CLLocationCoordinate2D location = [self getLocation];
+    CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
     log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
     [logVM loadLogs];
     [logVM.arrLog addObject:log];
@@ -62,17 +58,6 @@
     [self.imgReward setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Reward_%d", self.reward]]];
     
     [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(goBackToPlayer) userInfo:nil repeats:NO];
-}
-
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
 }
 
 - (void)goBackToPlayer {

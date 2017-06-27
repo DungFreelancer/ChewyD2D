@@ -13,10 +13,8 @@
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
 #import "CALayer+BorderShadow.h"
-#import <CoreLocation/CoreLocation.h>
 
 @implementation SettingView {
-    CLLocationManager *locationManager;
     LogViewModel *logVM;
     PlayerViewModel *playerVM;
 }
@@ -27,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getLocation];
     [self.btnSave.layer setBorderWithRadius:10.0f Color:[UIColor redColor]];
     [self.btnReport.layer setBorderWithRadius:10.0f Color:[UIColor redColor]];
     
@@ -46,17 +43,6 @@
     
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickTap:)];
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
-}
-
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
 }
 
 - (void)onClickTap:(id)sender {
@@ -93,7 +79,7 @@
     NSString *desc = [NSString stringWithFormat:@"Thay đổi số quà: Vé:%@ - Nón:%@ - MócKhoá:%@ - V10:%@ - V20:%@ - V50:%@ - VSet:%@", self.txtAmountReward_1.text, self.txtAmountReward_2.text, self.txtAmountReward_3.text, self.txtAmountReward_4.text, self.txtAmountReward_5.text, self.txtAmountReward_6.text, self.txtAmountReward_7.text];
     log.desc = desc;
     log.date = [NSDate date];
-    CLLocationCoordinate2D location = [self getLocation];
+    CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
     log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
     [logVM loadLogs];
     [logVM.arrLog addObject:log];
@@ -117,7 +103,7 @@
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
         [mail setToRecipients:@[EMAIL_ADDRESS]];
-        CLLocationCoordinate2D location = [self getLocation];
+        CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
         [mail setSubject:[NSString stringWithFormat:@"%@ - %@ - %f, %f", EMAIL_SUBJECT, [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"dd/MM/yyyy HH:mm"],location.latitude, location.longitude]];
         
         [mail addAttachmentData:[[self getSystemContent] dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"text" fileName:@"System"];

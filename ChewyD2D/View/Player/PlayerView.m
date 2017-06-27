@@ -10,7 +10,6 @@
 #import "PlayerViewModel.h"
 #import "LogViewModel.h"
 #import "Constant.h"
-#import <CoreLocation/CoreLocation.h>
 #import "UtilityClass.h"
 #import "CALayer+BorderShadow.h"
 
@@ -18,7 +17,6 @@
     NSTimer *runStandby;
     BOOL isTouch;
     short indexStanby;
-    CLLocationManager *locationManager;
     LogViewModel *logVM;
 }
 
@@ -34,8 +32,6 @@
     [self checkFistTime];
     
     logVM = [[LogViewModel alloc] init];
-    
-    [self getLocation];
     
     isTouch = NO;
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(showStandBy) userInfo:nil repeats:YES];
@@ -77,17 +73,6 @@
     }
 }
 
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
-}
-
 - (void)checkFistTime {
     if ([USER_DEFAULT boolForKey:PREF_IS_FIST_TIME] == NO) {
         [USER_DEFAULT setBool:YES forKey:PREF_IS_FIST_TIME];
@@ -111,7 +96,7 @@
 - (IBAction)onClickOK:(id)sender {
     if (self.txtName.text.length > 0 &&
         self.txtPhone.text.length >= 8) {
-        CLLocationCoordinate2D location = [self getLocation];
+        CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
         
         PlayerViewModel *playerVM = [[PlayerViewModel alloc] init];
         PlayerModel *player = [[PlayerModel alloc] init];
@@ -163,7 +148,7 @@
         log.name = LOG_SETTING;
         log.desc = @"Vào setting";
         log.date = [NSDate date];
-        CLLocationCoordinate2D location = [self getLocation];
+        CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
         log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
         [logVM loadLogs];
         [logVM.arrLog addObject:log];

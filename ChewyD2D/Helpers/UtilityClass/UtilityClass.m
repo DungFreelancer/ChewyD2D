@@ -8,7 +8,9 @@
 
 #import "UtilityClass.h"
 
-@implementation UtilityClass
+@implementation UtilityClass {
+    CLLocationManager *locationManager;
+}
 
 #pragma mark - Init And Shared Object
 
@@ -353,6 +355,17 @@
         }
     }
     return dayDiff;
+}
+
+- (CLLocationCoordinate2D)getLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
 }
 
 @end

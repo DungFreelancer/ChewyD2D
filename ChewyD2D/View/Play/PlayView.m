@@ -11,13 +11,12 @@
 #import "HUDHelper.h"
 #import "RewardView.h"
 #import "LogViewModel.h"
-#import <CoreLocation/CoreLocation.h>
+#import "UtilityClass.h"
 
 @implementation PlayView {
     int loop, loopClock, stopPosition;
     NSTimer *run;
     short reward;
-    CLLocationManager *locationManager;
     LogViewModel *logVM;
     BOOL isTouch;
 }
@@ -28,8 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getLocation];
-    
     isTouch = NO;
 }
 
@@ -38,17 +35,6 @@
         RewardView *viewReward = (RewardView *) [segue destinationViewController];
         viewReward.reward = reward;
     }
-}
-
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
 }
 
 #pragma -
@@ -93,7 +79,7 @@
         log.name = LOG_PLAY;
         log.desc = @"Vào quay thưởng";
         log.date = [NSDate date];
-        CLLocationCoordinate2D location = [self getLocation];
+        CLLocationCoordinate2D location = [[UtilityClass sharedInstance] getLocation];
         log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
         [logVM loadLogs];
         [logVM.arrLog addObject:log];
