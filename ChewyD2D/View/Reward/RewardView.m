@@ -19,6 +19,9 @@
     LogViewModel *logVM;
 }
 
+#pragma -
+#pragma - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -61,6 +64,17 @@
     [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(goBackToPlayer) userInfo:nil repeats:NO];
 }
 
+- (CLLocationCoordinate2D)getLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
+}
+
 - (void)goBackToPlayer {
     if (self.reward == 1) {
         int amount = [[USER_DEFAULT objectForKey:PREF_AMOUNT_REWARD_1] intValue];
@@ -87,17 +101,6 @@
     
     [USER_DEFAULT synchronize];
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
 }
 
 @end

@@ -22,6 +22,9 @@
     LogViewModel *logVM;
 }
 
+#pragma -
+#pragma - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -74,6 +77,37 @@
     }
 }
 
+- (CLLocationCoordinate2D)getLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
+}
+
+- (void)checkFistTime {
+    if ([USER_DEFAULT boolForKey:PREF_IS_FIST_TIME] == NO) {
+        [USER_DEFAULT setBool:YES forKey:PREF_IS_FIST_TIME];
+        
+        // set default amount of reward.
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_1];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_2];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_3];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_4];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_5];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_6];
+        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_7];
+        
+        [USER_DEFAULT synchronize];
+    }
+}
+
+#pragma -
+#pragma - On Click Event
+
 - (IBAction)onClickOK:(id)sender {
     if (self.txtName.text.length > 0 &&
         self.txtPhone.text.length >= 8) {
@@ -88,15 +122,6 @@
         [playerVM loadPlayers];
         [playerVM.arrPlayer addObject:player];
         [playerVM savePlayers];
-        
-//        LogModel *log = [[LogModel alloc] init];
-//        log.name = LOG_USER;
-//        log.desc = [NSString stringWithFormat:@"Người chơi: ten:%@ sdt:%@", self.txtName.text, [self formatPhoneNumber:self.txtPhone.text]];
-//        log.date = [NSDate date];
-//        log.location = [NSString stringWithFormat:@"%f, %f", location.latitude, location.longitude];
-//        [logVM loadLogs];
-//        [logVM.arrLog addObject:log];
-//        [logVM saveLogs];
         
         [self performSegueWithIdentifier:@"segue_player_play" sender:nil];
     } else if (self.txtName.text.length == 0) {
@@ -119,17 +144,6 @@
     self.viewSetting.hidden = NO;
 }
 
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
-}
-
 - (IBAction)onClickStandby:(id)sender {
     self.btnStandby.hidden = YES;
     isTouch = YES;
@@ -140,23 +154,6 @@
         [self.txtName resignFirstResponder];
         [self.txtPhone resignFirstResponder];
         [self.txtPassSetting resignFirstResponder];
-    }
-}
-
-- (void)checkFistTime {
-    if ([USER_DEFAULT boolForKey:PREF_IS_FIST_TIME] == NO) {
-        [USER_DEFAULT setBool:YES forKey:PREF_IS_FIST_TIME];
-        
-        // set default amount of reward.
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_1];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_2];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_3];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_4];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_5];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_6];
-        [USER_DEFAULT setObject:@"0" forKey:PREF_AMOUNT_REWARD_7];
-        
-        [USER_DEFAULT synchronize];
     }
 }
 
@@ -179,6 +176,9 @@
     self.txtPassSetting.text = @"";
     [self.txtPassSetting resignFirstResponder];
 }
+
+#pragma -
+#pragma - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [self onClickStandby:textField];

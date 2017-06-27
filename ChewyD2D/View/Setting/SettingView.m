@@ -21,6 +21,9 @@
     PlayerViewModel *playerVM;
 }
 
+#pragma -
+#pragma - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,6 +48,17 @@
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
+- (CLLocationCoordinate2D)getLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
+}
+
 - (void)onClickTap:(id)sender {
     [self.txtAmountReward_1 resignFirstResponder];
     [self.txtAmountReward_2 resignFirstResponder];
@@ -64,6 +78,9 @@
     self.txtAmountReward_6.text = [USER_DEFAULT objectForKey:PREF_AMOUNT_REWARD_6];
     self.txtAmountReward_7.text = [USER_DEFAULT objectForKey:PREF_AMOUNT_REWARD_7];
 }
+
+#pragma -
+#pragma - On Click Event
 
 - (IBAction)onClickBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -93,17 +110,6 @@
     [USER_DEFAULT synchronize];
     
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (CLLocationCoordinate2D)getLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    return coordinate;
 }
 
 - (IBAction)onClickSync:(id)sender {
@@ -154,8 +160,7 @@
 #pragma mark -
 #pragma mark - MFMailComposeViewControllerDelegate
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     switch (result) {
         case MFMailComposeResultSent:
             DLOG(@"You sent the email");

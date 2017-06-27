@@ -22,6 +22,9 @@
     BOOL isTouch;
 }
 
+#pragma -
+#pragma - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,6 +50,9 @@
     CLLocationCoordinate2D coordinate = [location coordinate];
     return coordinate;
 }
+
+#pragma -
+#pragma - On Click Event
 
 - (IBAction)onClickRun:(id)sender {
     if (isTouch) {

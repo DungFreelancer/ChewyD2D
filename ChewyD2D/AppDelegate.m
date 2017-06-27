@@ -7,9 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "NetworkHelper.h"
-#import <Reachability/Reachability.h>
-#import "Constant.h"
 
 @interface AppDelegate ()
 
@@ -21,39 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // Case 1: ISSUES - double excute
-    // Allocate a reachability object
-    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-    
-    // Set the blocks
-    reach.reachableBlock = ^(Reachability*reach)
-    {
-        // keep in mind this is called on a background thread
-        // and if you are updating the UI it needs to happen
-        // on the main thread, like this:
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-//                        NSLog(@"REACHABLE!");
-        });
-    };
-    
-    reach.unreachableBlock = ^(Reachability*reach)
-    {
-//                NSLog(@"UNREACHABLE!");
-    };
-    
-    // Start the notifier, which will cause the reachability object to retain itself!
-    [reach startNotifier];
-    //    [reach stopNotifier];
-    
-    // Case 2: ISSUES - excute on main thread
-    [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
-        DLOG(@"isConnected=%d", connected);
-    }];
-    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

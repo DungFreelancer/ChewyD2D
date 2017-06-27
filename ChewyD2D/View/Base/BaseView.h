@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseView : UIViewController {
-    
-}
+@interface BaseView : UIViewController
 
 - (void)setNavBarTitle:(NSString *)title;
 - (void)setBackBarItem;

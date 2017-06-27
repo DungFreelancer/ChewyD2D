@@ -263,9 +263,9 @@
 		9A5F19C51D8E907700B2E5AB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9AD3A3341DC6422200073E15 /* CALayer+BorderShadow */,
-				9A5F19E61D8EAC8F00B2E5AB /* NetworkHelper */,
 				9A5F19D21D8EA15C00B2E5AB /* Constant */,
+				9A5F19E61D8EAC8F00B2E5AB /* NetworkHelper */,
+				9AD3A3341DC6422200073E15 /* CALayer+BorderShadow */,
 				9AD419371D8EDCC1006FE776 /* HUDHelper */,
 				9A5F19D81D8EA33300B2E5AB /* UIImageView+Dowload */,
 				9A5F19DC1D8EA97700B2E5AB /* UIView+RoundedCorners */,
