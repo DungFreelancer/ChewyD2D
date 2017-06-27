@@ -144,89 +144,6 @@
 - (void)hightlightRewardFirst:(int)first second:(int)second thrid:(int)thrid four:(int)four five:(int)five six:(int)six seven:(int)seven eight:(int)eight{
     if (IS_IPHONE) {
         if (loopClock == first) {
-            self.imgReward_1.hidden = NO;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == second) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = NO;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == thrid) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = NO;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == four) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = NO;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == five) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = NO;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == six) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = NO;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == seven) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = NO;
-            self.imgReward_8.hidden = YES;
-        } else if (loopClock == eight) {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = NO;
-        } else {
-            self.imgReward_1.hidden = YES;
-            self.imgReward_2.hidden = YES;
-            self.imgReward_3.hidden = YES;
-            self.imgReward_4.hidden = YES;
-            self.imgReward_5.hidden = YES;
-            self.imgReward_6.hidden = YES;
-            self.imgReward_7.hidden = YES;
-            self.imgReward_8.hidden = YES;
-        }
-    } else { // iPad
-        if (loopClock == first) {
             self.imgReward_1_2.hidden = NO;
             self.imgReward_2_2.hidden = YES;
             self.imgReward_3_2.hidden = YES;
@@ -307,6 +224,89 @@
             self.imgReward_6_2.hidden = YES;
             self.imgReward_7_2.hidden = YES;
             self.imgReward_8_2.hidden = YES;
+        }
+    } else { // iPad.
+        if (loopClock == first) {
+            self.imgReward_1.hidden = NO;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == second) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = NO;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == thrid) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = NO;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == four) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = NO;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == five) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = NO;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == six) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = NO;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == seven) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = NO;
+            self.imgReward_8.hidden = YES;
+        } else if (loopClock == eight) {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = NO;
+        } else {
+            self.imgReward_1.hidden = YES;
+            self.imgReward_2.hidden = YES;
+            self.imgReward_3.hidden = YES;
+            self.imgReward_4.hidden = YES;
+            self.imgReward_5.hidden = YES;
+            self.imgReward_6.hidden = YES;
+            self.imgReward_7.hidden = YES;
+            self.imgReward_8.hidden = YES;
         }
     }
 }
