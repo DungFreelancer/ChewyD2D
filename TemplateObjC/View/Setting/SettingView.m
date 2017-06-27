@@ -9,6 +9,7 @@
 #import "SettingView.h"
 #import "Constant.h"
 #import "UtilityClass.h"
+#import "HUDHelper.h"
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
 #import "CALayer+BorderShadow.h"
@@ -157,21 +158,26 @@
 {
     switch (result) {
         case MFMailComposeResultSent:
-            NSLog(@"You sent the email.");
+            DLOG(@"You sent the email");
+            [[HUDHelper sharedInstance] showToastWithMessage:@"You sent the email" onView:self.view];
             [logVM clearLogs];
             [playerVM clearPlayers];
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"You saved a draft of this email");
+            DLOG(@"You saved a draft of this email");
+            [[HUDHelper sharedInstance] showToastWithMessage:@"You saved a draft of this email" onView:self.view];
             break;
         case MFMailComposeResultCancelled:
-            NSLog(@"You cancelled sending this email.");
+            ELOG(@"You cancelled sending this email");
+            [[HUDHelper sharedInstance] showToastWithMessage:@"You cancelled sending this email" onView:self.view];
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail failed:  An error occurred when trying to compose this email");
+            ELOG(@"An error occurred when trying to compose this email");
+            [[HUDHelper sharedInstance] showToastWithMessage:@"An error occurred when trying to compose this email" onView:self.view];
             break;
         default:
-            NSLog(@"An error occurred when trying to compose this email");
+            ELOG(@"An error occurred when trying to compose this email");
+            [[HUDHelper sharedInstance] showToastWithMessage:@"An error occurred when trying to compose this email" onView:self.view];
             break;
     }
     
