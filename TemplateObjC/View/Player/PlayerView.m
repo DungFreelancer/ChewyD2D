@@ -42,7 +42,6 @@
     self.txtPhone.delegate = self;
     self.txtPassSetting.delegate = self;
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickStandby:)];
-    [self.view addGestureRecognizer:singleTapGestureRecognizer];
     [self.viewSetting addGestureRecognizer:singleTapGestureRecognizer];
 }
 
@@ -64,6 +63,10 @@
     }
     
     if (!isTouch) {
+        [self.txtName resignFirstResponder];
+        [self.txtPhone resignFirstResponder];
+        [self.txtPassSetting resignFirstResponder];
+        
         [self.view bringSubviewToFront:self.btnStandby];
         self.btnStandby.hidden = NO;
     } else {
@@ -130,6 +133,14 @@
 - (IBAction)onClickStandby:(id)sender {
     self.btnStandby.hidden = YES;
     isTouch = YES;
+    
+    if (sender != self.txtName &&
+        sender != self.txtPhone &&
+        sender != self.txtPassSetting) {
+        [self.txtName resignFirstResponder];
+        [self.txtPhone resignFirstResponder];
+        [self.txtPassSetting resignFirstResponder];
+    }
 }
 
 - (void)checkFistTime {
@@ -170,16 +181,16 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self onClickStandby:nil];
+    [self onClickStandby:textField];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    [self onClickStandby:nil];
+    [self onClickStandby:textField];
     return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self onClickStandby:nil];
+    [self onClickStandby:textField];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

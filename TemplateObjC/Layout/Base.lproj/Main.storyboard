@@ -221,8 +221,12 @@
                                     <constraint firstItem="bVz-nj-pZb" firstAttribute="centerX" secondItem="YMu-fv-880" secondAttribute="centerX" id="iIL-Rn-Gap"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Player" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-sU-75g">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Player" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-sU-75g">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gKO-gx-CDL" appends="YES" id="TBS-Xf-ijr"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixn-bO-L0l">
                                 <rect key="frame" x="244.5" y="95" width="142.5" height="21"/>
@@ -282,6 +286,7 @@
                     <connections>
                         <outlet property="btnSetting" destination="xRj-A5-Nkf" id="83Y-hT-AWk"/>
                         <outlet property="btnStandby" destination="N6M-Oy-MQW" id="UIp-Tz-XNT"/>
+                        <outlet property="imgBackground" destination="dUR-sU-75g" id="ndk-kc-9wp"/>
                         <outlet property="txtName" destination="Ixn-bO-L0l" id="GSa-Hy-8vF"/>
                         <outlet property="txtPassSetting" destination="bVz-nj-pZb" id="VIg-Hc-J6a"/>
                         <outlet property="txtPhone" destination="klD-S8-TLL" id="Jal-hP-Qvx"/>
@@ -291,6 +296,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZ7-Tb-lh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gKO-gx-CDL">
+                    <connections>
+                        <action selector="onClickStandby:" destination="Mm1-2j-ce7" id="9fG-H2-HYl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2855.7065217391305" y="-146.37681159420291"/>
         </scene>

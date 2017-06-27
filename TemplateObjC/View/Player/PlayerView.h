@@ -8,8 +8,9 @@
 
 #import "BaseView.h"
 
-@interface PlayerView : BaseView <UIGestureRecognizerDelegate, UITextFieldDelegate>
+@interface PlayerView : BaseView <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtPhone;
 @property (weak, nonatomic) IBOutlet UIButton *btnStandby;

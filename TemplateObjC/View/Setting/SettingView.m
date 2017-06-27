@@ -39,6 +39,19 @@
     self.txtAmountReward_5.delegate = self;
     self.txtAmountReward_6.delegate = self;
     self.txtAmountReward_7.delegate = self;
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickTap:)];
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+}
+
+- (void)onClickTap:(id)sender {
+    [self.txtAmountReward_1 resignFirstResponder];
+    [self.txtAmountReward_2 resignFirstResponder];
+    [self.txtAmountReward_3 resignFirstResponder];
+    [self.txtAmountReward_4 resignFirstResponder];
+    [self.txtAmountReward_5 resignFirstResponder];
+    [self.txtAmountReward_6 resignFirstResponder];
+    [self.txtAmountReward_7 resignFirstResponder];
 }
 
 - (void)setStatus {
