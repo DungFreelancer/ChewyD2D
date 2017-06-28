@@ -28,6 +28,10 @@
     [super viewDidLoad];
     
     isTouch = NO;
+    
+    if (IS_IPHONE) {
+        [self.imgBackGround setImage:[UIImage imageNamed:@"PlayView_iphone"]];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
