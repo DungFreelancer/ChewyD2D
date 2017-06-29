@@ -9,9 +9,6 @@
 #import "PlayerView.h"
 #import "PlayerViewModel.h"
 #import "LogViewModel.h"
-#import "Constant.h"
-#import "UtilityClass.h"
-#import "CALayer+BorderShadow.h"
 
 @implementation PlayerView {
     NSTimer *runStandby;

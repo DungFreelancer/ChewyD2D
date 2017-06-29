@@ -7,12 +7,8 @@
 //
 
 #import "SettingView.h"
-#import "Constant.h"
-#import "UtilityClass.h"
-#import "HUDHelper.h"
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
-#import "CALayer+BorderShadow.h"
 
 @implementation SettingView {
     LogViewModel *logVM;

@@ -7,11 +7,8 @@
 //
 
 #import "PlayView.h"
-#import "Constant.h"
-#import "HUDHelper.h"
 #import "RewardView.h"
 #import "LogViewModel.h"
-#import "UtilityClass.h"
 
 @implementation PlayView {
     int loop, loopClock, stopPosition;

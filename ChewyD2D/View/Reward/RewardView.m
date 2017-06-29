@@ -7,9 +7,6 @@
 //
 
 #import "RewardView.h"
-#import "UtilityClass.h"
-#import "Constant.h"
-#import "HUDHelper.h"
 #import "LogViewModel.h"
 #import "PlayerViewModel.h"
 
