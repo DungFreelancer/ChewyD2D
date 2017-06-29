@@ -21,6 +21,7 @@
 - (NSString *)applicationDocumentDirectoryString;
 - (NSString *)applicationCacheDirectoryString;
 - (NSURL *)applicationDocumentsDirectoryURL;
+- (void)removePersistentDomain;
 
 //Scale and Rotate according to Orientation
 - (UIImage *)scaleAndRotateImage:(UIImage *)image;

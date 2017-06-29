@@ -55,6 +55,11 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (void)removePersistentDomain {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
 # pragma mark - Scale and Rotate according to Orientation
 
 - (UIImage *)scaleAndRotateImage:(UIImage *)image {
