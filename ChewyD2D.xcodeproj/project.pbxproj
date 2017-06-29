@@ -52,11 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1059398D395F921191E2A324 /* Pods-ChewyD2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewyD2D.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D.release.xcconfig"; sourceTree = "<group>"; };
 		668FD8814688ACDF42008A79 /* Pods-ChewyD2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewyD2D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChewyD2D/Pods-ChewyD2D.debug.xcconfig"; sourceTree = "<group>"; };
 		93F2B35329B940088861F42C /* Pods_ChewyD2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChewyD2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
 		9A1409DC1E73ECBD00B9354B /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		9A1409DD1E73ECC700B9354B /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
 		9A1483E61E73B747004B33DA /* AccountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		9AD3A3361DC6426800073E15 /* CALayer+BorderShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderShadow.m"; sourceTree = "<group>"; };
 		9AD419381D8EDD2F006FE776 /* HUDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HUDHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AD419391D8EDD3D006FE776 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
-		FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +134,6 @@
 		48C97E043069A5E7511F1953 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */,
 				93F2B35329B940088861F42C /* Pods_ChewyD2D.framework */,
 			);
 			name = Frameworks;
@@ -219,10 +215,10 @@
 		9A5F19831D8E905700B2E5AB = {
 			isa = PBXGroup;
 			children = (
+				9A5F198E1D8E905700B2E5AB /* ChewyD2D */,
 				48C97E043069A5E7511F1953 /* Frameworks */,
 				AC335B873EECD59726E39A67 /* Pods */,
 				9A5F198D1D8E905700B2E5AB /* Products */,
-				9A5F198E1D8E905700B2E5AB /* ChewyD2D */,
 			);
 			sourceTree = "<group>";
 		};
@@ -418,8 +414,6 @@
 		AC335B873EECD59726E39A67 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */,
-				95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */,
 				668FD8814688ACDF42008A79 /* Pods-ChewyD2D.debug.xcconfig */,
 				1059398D395F921191E2A324 /* Pods-ChewyD2D.release.xcconfig */,
 			);
